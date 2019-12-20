@@ -8,12 +8,11 @@
 </template>
 
 <script>
-	import Vue from 'vue'
-	import BasePage from '../../componens/BasePage.vue'
+	import { MemberPage } from '../root'
 	
 	export default {
-		//components:{bagepage},
-		extends: BasePage,
+		//components:{parent},
+		extends: MemberPage,
 		
 		data() {
 			return {
