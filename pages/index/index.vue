@@ -8,14 +8,20 @@
 </template>
 
 <script>
+	import Vue from 'vue'
+	import BasePage from '../../componens/BasePage.vue'
+	
 	export default {
+		//components:{bagepage},
+		extends: BasePage,
+		
 		data() {
 			return {
 				title: 'Hello'
 			}
 		},
 		onLoad() {
-
+			console.log('load index')
 		},
 		methods: {
 
