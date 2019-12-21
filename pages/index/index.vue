@@ -4,6 +4,7 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<button type="primary" @click="qqlogin">QQ Login</button>
 	</view>
 </template>
 
@@ -23,7 +24,14 @@
 			console.log('load index')
 		},
 		methods: {
-
+			qqlogin(){
+				uni.showToast({
+					title: 'QQ Login'
+				})
+				
+				const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
+				
+			}
 		}
 	}
 </script>
