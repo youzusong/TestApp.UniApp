@@ -1,39 +1,20 @@
-{  
-    "name": "yq_qqlogin",  
-    "id": "yq_qqlogin",  
-    "version": "1.0.0",  
-    "description": "QQ Login",  
-    "_dp_type":"nativeplugin",  
-    "_dp_nativeplugin":{  
-        "android": {  
-            "plugins": [  
-                {  
-                    "type": "module",  
-                    "name": "YS-QQLogin",  
-                    "class": "com.youzusong.ysplugin_qqlogin.QQLoginWXModule"  
-                }  
-            ],  
-            "hooksClass": "com.youzusong.ysplugin_qqlogin.QQLogin_AppProxy",  
-            "integrateType": "aar",  
-            "dependencies": [  
-                
-            ],  
-            "compileOptions": {  //可选，Java编译参数配置  
-                "sourceCompatibility": "1.8",  
-                "targetCompatibility": "1.8"  
-            },  
-            "abis": [  
-                "armeabi-v7a",  
-				"arm64-v8a",
-                "x86"  
-            ],  
-            "minSdkVersion": "16",  
-            "permissions": [
-				
-            ],  
-            "parameters": {  
-                
-            }  
-        }
-    }  
+{
+	"name": "QQLogin",
+	"id": "YS-QQLogin",
+	"version": "1.1.0",
+	"description": "QQ Login 插件",
+	"_dp_type":"nativeplugin",
+	"_dp_nativeplugin":{
+		"android": {
+			"plugins": [
+				{
+					"type": "module",
+					"name": "YS-QQLogin",
+					"class": "com.youzusong.ysplugin_qqlogin.QQLoginWXModule"
+				}
+			],
+			"integrateType": "aar",
+			"minSdkVersion" : 16
+		}
+	}
 }
