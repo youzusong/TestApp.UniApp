@@ -55,7 +55,7 @@
             "YS-QQLogin" : {
                 "__plugin_info__" : {
                     "name" : "QQLogin",
-                    "description" : "QQ Login 插件",
+                    "description" : "QQ登录插件",
                     "platforms" : "Android",
                     "url" : "",
                     "android_package_name" : "",

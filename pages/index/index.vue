@@ -30,8 +30,9 @@
 			qqlogin(){
 				const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
 				ysQQLogin.login({
-					id: 'xxx'
+					appId: '1110039343'
 				}, result => {
+					console.log('qqlogin result');
 					console.log(result)
 				})
 			},
