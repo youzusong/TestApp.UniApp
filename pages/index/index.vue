@@ -6,6 +6,8 @@
 		</view>
 		<button type="primary" @click="richalert">Rich Alert</button>
 		<button type="primary" @click="qqlogin">QQ Login</button>
+		<button type="primary" @click="testClick">test click</button>
+		<text>{{errmsg}}</text>
 	</view>
 </template>
 
@@ -20,7 +22,8 @@
 
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				errmsg: ''
 			}
 		},
 		onLoad() {
@@ -28,13 +31,23 @@
 		},
 		methods: {
 			qqlogin(){
-				const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
-				ysQQLogin.login({
-					appId: '1110039343'
-				}, result => {
-					console.log('qqlogin result');
-					console.log(result)
+				console.log('click qqlogin');
+				uni.showToast({
+					title: 'click qqlogin'
 				})
+				
+				try{
+					const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
+					ysQQLogin.login({
+						appId: '1110039343'
+					}, result => {
+						console.log('qqlogin result');
+						console.log(result);
+					})
+				}catch(e){
+					this.errmsg = e.message;
+				}
+				
 			},
 			
 			richalert(){
@@ -82,6 +95,13 @@
 							break;
 					}
 				});
+			}
+			,
+			
+			testClick(){
+				uni.showToast({
+					title: 'test click'
+				})
 			}
 		}
 	}
