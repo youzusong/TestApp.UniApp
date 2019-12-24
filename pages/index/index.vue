@@ -4,8 +4,8 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
-		<button type="primary" @click="richalert">Rich Alert</button>
-		<button type="primary" @click="qqlogin">QQ Login</button>
+		<button type="primary" @click="richalert">Rich Alert 2</button>
+		<button type="primary" @click="qqlogin">QQ Login 2</button>
 		<button type="primary" @click="testClick">test click</button>
 		<text>{{errmsg}}</text>
 	</view>
@@ -32,20 +32,28 @@
 		methods: {
 			qqlogin(){
 				console.log('click qqlogin');
-				uni.showToast({
-					title: 'click qqlogin'
-				})
-				
+
 				try{
 					const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
+					
+					ysQQLogin.test({
+						appId: '1110039343'
+					}, result => {
+						console.log(result);
+					})
+					
+					
+					/*
 					ysQQLogin.login({
 						appId: '1110039343'
 					}, result => {
 						console.log('qqlogin result');
 						console.log(result);
 					})
+					*/
 				}catch(e){
-					this.errmsg = e.message;
+					let msg = this.errmsg;
+					this.errmsg = msg + '\r\n' + e.message;
 				}
 				
 			},
