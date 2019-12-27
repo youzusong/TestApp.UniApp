@@ -14,7 +14,10 @@
 				}
 			],
 			"integrateType": "aar",
-			"minSdkVersion" : 16
+			"minSdkVersion" : 16,
+			"dependencies": [
+				"com.google.android.gms:play-services-auth:17.0.0"
+			]
 		}
 	}
 }
