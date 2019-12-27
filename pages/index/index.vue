@@ -4,9 +4,9 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
-		<button type="primary" @click="richalert">Rich Alert 2</button>
-		<button type="primary" @click="qqlogin">QQ Login 2</button>
-		<button type="primary" @click="testClick">test click</button>
+		<button type="primary" @click="richalert">Rich Alert</button>
+		<button type="primary" @click="qqlogin">QQ Login</button>
+		<button type="primary" @click="gglogin">GG Login</button>
 		<text>{{errmsg}}</text>
 	</view>
 </template>
@@ -106,10 +106,18 @@
 			}
 			,
 			
-			testClick(){
-				uni.showToast({
-					title: 'test click'
-				})
+			gglogin(){
+				console.log('click gglogin');
+				try{
+					const ysGGLogin = uni.requireNativePlugin('YS-GGLogin');
+					ysGGLogin.login({
+						clientId: '244668994570-dn376h0ls5gl99si6rrp6lg13tu2ecvq.apps.googleusercontent.com'
+					}, result => {
+						console.log(result);
+					})
+				}catch(e){
+					console.log(e);
+				}
 			}
 		}
 	}

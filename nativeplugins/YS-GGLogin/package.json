@@ -1,0 +1,20 @@
+{
+	"name": "GGLogin",
+	"id": "YS-GGLogin",
+	"version": "1.0.0",
+	"description": "谷歌登录插件",
+	"_dp_type":"nativeplugin",
+	"_dp_nativeplugin":{
+		"android": {
+			"plugins": [
+				{
+					"type": "module",
+					"name": "YS-GGLogin",
+					"class": "com.you.uniplugin_google_login.GoogleLoginWXModule"
+				}
+			],
+			"integrateType": "aar",
+			"minSdkVersion" : 16
+		}
+	}
+}
