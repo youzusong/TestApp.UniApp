@@ -36,21 +36,22 @@
 				try{
 					const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
 					
+					/*
 					ysQQLogin.test({
 						appId: '1110039343'
 					}, result => {
 						console.log(result);
 					})
+					*/
 					
 					
-					/*
 					ysQQLogin.login({
 						appId: '1110039343'
 					}, result => {
 						console.log('qqlogin result');
 						console.log(result);
 					})
-					*/
+					
 				}catch(e){
 					let msg = this.errmsg;
 					this.errmsg = msg + '\r\n' + e.message;
