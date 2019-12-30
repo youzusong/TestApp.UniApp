@@ -1,0 +1,23 @@
+{
+	"name": "YS-Oauth",
+	"id": "YS-Oauth",
+	"version": "1.0.0",
+	"description": "YS第三方登录",
+	"_dp_type":"nativeplugin",
+	"_dp_nativeplugin":{
+		"android": {
+			"plugins": [
+				{
+					"type": "module",
+					"name": "YS-Oauth",
+					"class": "com.youzusong.uniplugin_oauth.YsOauthWXModule"
+				}
+			],
+			"integrateType": "aar",
+			"minSdkVersion" : 19,
+			"dependencies": [
+				
+			]
+		}
+	}
+}

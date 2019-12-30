@@ -52,38 +52,10 @@
             "sdkConfigs" : {}
         },
         "nativePlugins" : {
-            "YS-GGLogin" : {
+            "YS-Oauth" : {
                 "__plugin_info__" : {
-                    "name" : "GGLogin",
-                    "description" : "谷歌登录插件",
-                    "platforms" : "Android",
-                    "url" : "",
-                    "android_package_name" : "",
-                    "ios_bundle_id" : "",
-                    "isCloud" : false,
-                    "bought" : -1,
-                    "pid" : "",
-                    "parameters" : {}
-                }
-            },
-            "YS-QQLogin" : {
-                "__plugin_info__" : {
-                    "name" : "QQLogin",
-                    "description" : "QQ登录插件",
-                    "platforms" : "Android",
-                    "url" : "",
-                    "android_package_name" : "",
-                    "ios_bundle_id" : "",
-                    "isCloud" : false,
-                    "bought" : -1,
-                    "pid" : "",
-                    "parameters" : {}
-                }
-            },
-            "DCloud-RichAlert" : {
-                "__plugin_info__" : {
-                    "name" : "RichAlert",
-                    "description" : "示例插件",
+                    "name" : "YS-Oauth",
+                    "description" : "YS第三方登录",
                     "platforms" : "Android",
                     "url" : "",
                     "android_package_name" : "",

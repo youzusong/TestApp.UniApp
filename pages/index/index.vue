@@ -4,7 +4,6 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
-		<button type="primary" @click="richalert">Rich Alert</button>
 		<button type="primary" @click="qqlogin">QQ Login</button>
 		<button type="primary" @click="gglogin">GG Login</button>
 		<text>{{errmsg}}</text>
@@ -30,95 +29,32 @@
 			console.log('load index')
 		},
 		methods: {
-			qqlogin(){
-				console.log('click qqlogin');
-
+			_login(p){
+				console.log('click login : ' + p);
+				
 				try{
-					const ysQQLogin = uni.requireNativePlugin('YS-QQLogin');
-					
-					/*
-					ysQQLogin.test({
-						appId: '1110039343'
-					}, result => {
-						console.log(result);
-					})
-					*/
-					
-					
-					ysQQLogin.login({
-						appId: '1110039343'
-					}, result => {
-						console.log('qqlogin result');
-						console.log(result);
-					})
-					
+					const ysOauth = uni.requireNativePlugin('YS-Oauth');
+					ysOauth.login({
+						provider: p
+					}, res => {
+						console.log('login success');
+						console.log(res);
+					}, err => {
+						console.log('login error');
+						console.log(err);
+					});
 				}catch(e){
 					let msg = this.errmsg;
 					this.errmsg = msg + '\r\n' + e.message;
 				}
-				
 			},
 			
-			richalert(){
-				const modal = uni.requireNativePlugin('modal');
-				const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert');
-				dcRichAlert.show({
-					position: 'bottom',
-					title: "提示信息",
-					titleColor: '#FF0000',
-					content: "<a href='https://uniapp.dcloud.io/' value='Hello uni-app'>uni-app</a> 是一个使用 Vue.js 开发跨平台应用的前端框架!\n免费的\n免费的\n免费的\n重要的事情说三遍",
-					contentAlign: 'left',
-					checkBox: {
-						title: '不再提示',
-						isSelected: true
-					},
-					buttons: [{
-							title: '取消'
-						},
-						{
-							title: '否'
-						},
-						{
-							title: '确认',
-							titleColor: '#3F51B5'
-						}
-					]
-				}, result => {
-					const msg = JSON.stringify(result);
-					modal.toast({
-						message: msg,
-						duration: 1.5
-					});
-					switch (result.type) {
-						case 'button':
-							console.log("callback---button--" + result.index);
-							break;
-						case 'checkBox':
-							console.log("callback---checkBox--" + result.isSelected);
-							break;
-						case 'a':
-							console.log("callback---a--" + JSON.stringify(result));
-							break;
-						case 'backCancel':
-							console.log("callback---backCancel--");
-							break;
-					}
-				});
-			}
-			,
+			qqlogin(){
+				this._login('qq');
+			},
 			
 			gglogin(){
-				console.log('click gglogin');
-				try{
-					const ysGGLogin = uni.requireNativePlugin('YS-GGLogin');
-					ysGGLogin.login({
-						clientId: '244668994570-dn376h0ls5gl99si6rrp6lg13tu2ecvq.apps.googleusercontent.com'
-					}, result => {
-						console.log(result);
-					})
-				}catch(e){
-					console.log(e);
-				}
+				this._login('google');
 			}
 		}
 	}
